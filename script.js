@@ -192,3 +192,61 @@ console.log(person.sayHello());
 
 console.log(person.personSize())
 console.log(person.felizNoCumpleaños())
+
+
+
+
+// CLASE 
+
+// crear clase que nos permite crear objetos de heroes y superheroes
+
+// las clases siempre se deben escribir con PascalCasing
+class Hero {
+  
+  // ESQUEMA QUE SEGUIRAN TODOS NUESTROS OBJETOS BASADOS EN ESTA CLASE
+
+  constructor(heroName, patata, nemesis = "La vida") {
+    //                                  |
+    //                          para asignar valor predeterminado       
+    // propiedades
+    this.name = heroName;
+    this.identity = patata;
+    this.isEvil = false; // .todos tienen la propiedad con el mismo valor
+    this.nemesis = nemesis
+  }
+
+  // metodos
+
+  // .todos los metodos se heredan a los objetos creados de esa clase
+  revealSecretIdentity() {
+    return `Mi identidad secreta es ${this.identity}`
+  }
+
+  // puede ser en funcion de flecha tambien. Recomendado.
+  // revealSecretIdentity = () => {
+  //   return `Mi identidad secreta es ${this.identity}`
+  // }
+
+  turnEvil() {
+    this.isEvil = true;
+    return `${this.name} ahora es malvado. MUAHAHAHAHAH!`
+  }
+
+}
+
+// como creamos objetos basados en esa clase
+
+console.log(Hero)
+
+
+let heroObject1 = new Hero("Batman", "Bruce Wayne", "Joker") // crear un nuevo objeto de la clase Hero
+console.log(heroObject1)
+console.log( heroObject1.revealSecretIdentity() )
+let heroObject2 = new Hero("Iron Man", "Tony Stark")
+console.log(heroObject2.isEvil)
+console.log( heroObject2.turnEvil() )
+console.log(heroObject2.isEvil)
+
+heroObject2.nuevoMetodo = () => {
+
+}
