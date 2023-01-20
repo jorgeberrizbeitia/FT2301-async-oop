@@ -247,6 +247,34 @@ console.log(heroObject2.isEvil)
 console.log( heroObject2.turnEvil() )
 console.log(heroObject2.isEvil)
 
-heroObject2.nuevoMetodo = () => {
+
+
+
+// SUBCLASES
+
+// indicamos que una es subclase esta atada a una clase => extends
+
+class SuperHero extends Hero {
+
+  constructor( name, identity, nemesis, superPower ) {
+    // para indicar que enviaremos estos parametros para el esquema padre
+    // super
+    super(name, identity, nemesis) // esto envia los 3 argumentos a la plantilla padre Hero
+    this.superPower = superPower
+  }
+
+  // .todos los metodos de Hero se heredan automaticamente al usar "extends"
+  usePower() {
+    return `${this.name} usa el poder ${this.superPower}`
+  }
 
 }
+
+let superHeroObject1 = new SuperHero("SpiderMan", "Peter Parker", "Green Goblin", "Sentido Aracnido")
+console.log(superHeroObject1)
+console.log(superHeroObject1.usePower() )
+
+let superHeroObject2 = new SuperHero("Dr.Strange", "Stephen Strange", "Scarlet Witch", "Poderes Misticos")
+
+console.log(superHeroObject2.usePower() )
+
