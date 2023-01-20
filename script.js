@@ -126,12 +126,45 @@ console.log(someName) // "Bob Mcintosh"
 
 let control = 0;
 
-let intId = setInterval( () => {
-  console.log("intervalo andando")
-}, 500 )
+// let intId = setInterval( () => {
+//   console.log("intervalo andando")
+// }, 500 )
 
-setTimeout( () => {
-  clearInterval(intId)
-}, 4000 )
+// setTimeout( () => {
+//   clearInterval(intId)
+// }, 4000 )
 
+
+
+
+function blast() {
+
+  let timer = 0;
+
+  let interId = setInterval( () => {
+    timer++
+    // console.log("timer", timer)
+    if (timer % 3 === 0 && timer % 5 === 0) {
+      console.log("BOOM BANG!!")
+    } else if (timer % 3 === 0) {
+      console.log("BOOM!!")
+    } else if (timer % 5 === 0) {
+      console.log("BANG!!")
+    } else {
+      console.log(timer)
+    }
+
+    // if (timer >= 15) {
+    //   clearInterval(interId)
+    // }
+  }, 1000 )
+
+  setTimeout( () => {
+    clearInterval(interId)
+  }, 15000 )
+
+}
+
+
+blast()
 
